@@ -1,22 +1,24 @@
-function countLetters(string) {
+function letterIndex(string) {
 // create a object as result
-var letterCount = {};
+var letterIndex = {};
 string = string.replace(/\s/g, '');
 
 //for loop the input string
-  // increase the key in the object result for the char
 
   for (i = 0; i < string.length; i++) {
+      //add the index of the char to the related key of the object
+
     var key = string[i]
-    if (letterCount[key]==undefined) {
-        letterCount[key] = 1
+    if (letterIndex[key]==undefined) {
+        letterIndex[key] = [i]
       }
     else {
-      letterCount[key] += 1
+      //console.log(typeof(letterIndex[key]))
+      letterIndex[key].push(i)
     }
   }
-  console.log(letterCount)
+  console.log(letterIndex)
 
 }
 
-countLetters("lighthouse in the house")
+letterIndex("lighthouse in the house")
